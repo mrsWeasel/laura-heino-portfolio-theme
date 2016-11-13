@@ -1,0 +1,21 @@
+// @import "../layout/content-sidebar";
+// @import "../layout/sidebar-content";
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+@import "primary/posts-and-pages";
+@import "template-parts/header";
+@import "template-parts/content";
+@import "template-parts/footer";
+
+/*--------------------------------------------------------------
+## Templates
+--------------------------------------------------------------*/
+@import "templates/single-portfolio";
+@import "templates/archive-portfolio";
+@import "templates/front-page";
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+@import "primary/comments";

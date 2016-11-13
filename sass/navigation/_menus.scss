@@ -1,0 +1,111 @@
+.no-js .nav-container #site-navigation ul {
+	display: block;
+}
+
+.nav-container {
+	position: relative;
+	#site-navigation {
+		clear: both;
+		display: block;
+		ul {
+			display: none;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		a {
+			display: block;
+			padding: 0.5em 0;
+			//@include font-size(1.6);
+			text-transform:lowercase;
+			text-decoration: none;
+			&:hover, &:focus {
+
+			}
+		}
+
+		.current_page_item > a,
+		.current-menu-item > a,
+		.current_page_ancestor > a,
+		.current-menu-ancestor > a {
+			color: $color__link-current;
+		}
+
+		@media screen and (min-width: 768px) {
+			#menu-button {
+				display: none;
+			}
+			>ul {
+				display: block;
+			}
+		}
+	}
+	@media screen and (max-width: 767px) {
+		#site-navigation.toggled ul {
+			//display: block;
+			li {
+				display: block;
+				ul {
+					margin-left: 1em;
+				}
+			}
+		}
+	}
+}
+
+	/* Small menu. */
+
+	.comment-navigation,
+	.posts-navigation,
+	.post-navigation {
+
+		.site-main & {
+			margin: 0 0 1.5em;
+			overflow: hidden;
+		}
+
+		.nav-links {
+			@extend .row;
+		}
+
+		.nav-previous {
+			@extend .col-xs-6;
+		text-align: left;
+		}
+
+.nav-next {
+	@extend .col-xs-6;
+	text-align: right;
+}
+	}	
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+ul.page-numbers {
+	list-style-type: none;
+	margin: 0 0 3.3em;
+	padding: 0;
+	li {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		a, .current {
+			display: inline-block;
+			text-decoration: none;
+		}
+	}
+}
+
+.menu-toggle {
+	background: none;
+	color: $black;
+	@include font-size(1.7);
+	padding: 0.5em;
+	&:focus, &:hover, &:active {
+		background: initial;
+	}
+}

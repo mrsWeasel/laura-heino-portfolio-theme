@@ -1,0 +1,49 @@
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	letter-spacing: 0.1em;
+	line-height: $font__line-height-heading;
+	color: $color__heading;
+	text-transform: lowercase;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0.7em 0 0.7em;
+}
+
+h1 {
+	@include font-size(2.4);
+	//margin: 0.7em 0 0;
+}
+
+.single-portfolio h1 {
+	margin: 0.7em 0 0.7em;
+}
+
+h2 {
+	@include font-size(2.1);
+}
+
+h3 {
+	@include font-size(1.9);
+}
+
+h4 {
+	@include font-size(1.7);
+}
+
+h5 {
+	@include font-size(1.5);
+}
+
+h6 {
+	@include font-size(1.5);
+}
+
+h2.secondary-title {
+	@include font-size(1.7);
+}
+
+h3.search-title {
+	@include font-size(1.8);
+}
