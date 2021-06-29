@@ -35,7 +35,7 @@ gulp.task('scripts', function() {
 	return gulp.src('js/src/*.js')
 	.pipe(concat('scripts.js'))
 	.pipe(gulp.dest('./js/'))
-	// .pipe(browserSync.reload({stream: true}));
+	.pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('sass', function() {
@@ -44,7 +44,7 @@ gulp.task('sass', function() {
 		.pipe(sourcemaps.write('.'))
 		.pipe(autoprefixer())
 		.pipe(gulp.dest('./css/'))
-		// .pipe(browserSync.reload({stream: true}));
+		.pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('php', function() {
@@ -60,13 +60,13 @@ gulp.task('php', function() {
 gulp.task('watch', function(done) {
 	gulp.watch('sass/**/*.scss', gulp.series('sass'));
 	gulp.watch('js/src/*.js', gulp.series('scripts'));
-	gulp.watch('css/*.css').on('change', browserSync.reload);
-	gulp.watch('js/*.js').on('change', browserSync.reload);
+	gulp.watch('css/style.css').on('change', browserSync.reload);
+	gulp.watch('js/src/*.js').on('change', browserSync.reload);
 	done();
 	
 });
 
-gulp.task('default', gulp.series('watch'));
+gulp.task('default', gulp.series('watch', 'browser-sync'));
 
 // production
 
