@@ -28,15 +28,7 @@ get_header(); ?>
 
 			</main><!-- #main -->
 		</div><!-- #primary -->
-			<?php if (is_page('contact')) : ?>
-			<section class="form-container">
-				<div class="row">
-					<div class="col-sm-8 col-sm-offset-2">
-						<?php echo do_shortcode('[contact-form-7 id="123" title="Contact form 1"]'); ?>
-					</div>
-				</div>
-			</section>		
-			<?php endif; ?>
+		
 		</div>
 	</div>	
 

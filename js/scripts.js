@@ -12,32 +12,6 @@ $('.wpcf7').on('wpcf7:invalid wpcf7:spam wpcf7:mailsent wpcf7:mailfailed', funct
 
 })(jQuery);
 (function($) {
-	var inputs = $('.wpcf7');
-
-	inputs.on('focus', 'textarea, input[type="text"], input[type="email"]', function() {
-		$(this).parent().parent().find('label').first().addClass('lh-focused');
-	});
-
-	inputs.on('blur', 'textarea, input[type="text"], input[type="email"]', function() {
-		if ($(this).val().length < 1) {
-			$(this).parent().parent().find('label').first().removeClass('lh-focused');
-		}
-	});
-
-	var searchForm = $('.search-form .search-field');
-
-	searchForm.on('focus', function() {
-		$(this).parent().find('label').first().addClass('lh-focused');
-	});
-
-	searchForm.on('blur', function() {
-		if ($(this).val().length < 1) {
-			$(this).parent().find('label').first().removeClass('lh-focused');
-		}
-	});
-
-})(jQuery);
-(function($) {
 
 	$(document).ready(function() {
 		$('#masthead-inner').addClass('loaded');
