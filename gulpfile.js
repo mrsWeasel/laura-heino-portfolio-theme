@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var sass = require('gulp-dart-sass');
 var watch = require('gulp-watch');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
@@ -31,15 +31,11 @@ gulp.task('browser-sync', function() {
 	});
 });
 
-gulp.task('laura', function() {
-	console.log('laura');
-});
-
 gulp.task('scripts', function() {
 	return gulp.src('js/src/*.js')
 	.pipe(concat('scripts.js'))
 	.pipe(gulp.dest('./js/'))
-	.pipe(browserSync.reload({stream: true}));
+	// .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('sass', function() {
@@ -48,7 +44,7 @@ gulp.task('sass', function() {
 		.pipe(sourcemaps.write('.'))
 		.pipe(autoprefixer())
 		.pipe(gulp.dest('./css/'))
-		.pipe(browserSync.reload({stream: true}));
+		// .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('php', function() {
@@ -56,12 +52,21 @@ gulp.task('php', function() {
 		.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('watch', ['browser-sync', 'sass', 'scripts', 'laura'], function() {
-	gulp.watch('sass/**/*.scss', ['sass']);
-	gulp.watch('**/*.js', ['scripts']);
+// gulp.task('watch', gulp.series('browser-sync', 'sass', 'scripts', function() {
+// 	gulp.watch('sass/**/*.scss', gulp.series('sass'));
+// 	gulp.watch('**/*.js', gulp.series('scripts'));
+// }));
+
+gulp.task('watch', function(done) {
+	gulp.watch('sass/**/*.scss', gulp.series('sass'));
+	gulp.watch('js/src/*.js', gulp.series('scripts'));
+	gulp.watch('css/*.css').on('change', browserSync.reload);
+	gulp.watch('js/*.js').on('change', browserSync.reload);
+	done();
+	
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', gulp.series('watch'));
 
 // production
 
@@ -107,6 +112,10 @@ gulp.task('images', function() {
 	.pipe(gulp.dest('./dist/laura-heino/assets/images'));
 });
 
-gulp.task('build', function(callback) {
-	runSequence('sass', 'scripts', ['rootfiles', 'inc', 'template-parts', 'page-templates', 'js', 'css', 'icons', 'images']), callback
+// gulp.task('build', function(callback) {
+// 	runSequence('sass', 'scripts', ['rootfiles', 'inc', 'template-parts', 'page-templates', 'js', 'css', 'icons', 'images']), callback
+// });
+
+gulp.task('build', async function() {
+	gulp.series('sass', 'scripts', 'rootfiles', 'inc', 'template-parts', 'page-templates', 'js', 'css', 'icons', 'images')
 });
