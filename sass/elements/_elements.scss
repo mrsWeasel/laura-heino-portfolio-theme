@@ -14,10 +14,6 @@ body {
 	border-top: 0.2em solid $nippon-red;
 }
 
-blockquote, q {
-
-}
-
 cite {
 	display: block;
 	@include font-size(1.8);

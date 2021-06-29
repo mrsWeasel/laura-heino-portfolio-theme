@@ -20,9 +20,9 @@
 			//@include font-size(1.6);
 			text-transform:lowercase;
 			text-decoration: none;
-			&:hover, &:focus {
+			// &:hover, &:focus {
 
-			}
+			// }
 		}
 
 		.current_page_item > a,
@@ -103,7 +103,8 @@ ul.page-numbers {
 .menu-toggle {
 	background: none;
 	color: $black;
-	@include font-size(1.7);
+	border: 1px solid $dark-gray;
+	// @include font-size(1.7);
 	padding: 0.5em;
 	&:focus, &:hover, &:active {
 		background: initial;

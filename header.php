@@ -34,6 +34,8 @@
 								<!--<h1>Laura Heino<br>
 								<span class="subheading">Portfolio</span></h1>-->
 							</a>
+							<h1>Design portfolio of Laura Heino</h1>
+							<div class="divider"></div>
 						</div><!-- .site-branding -->
 
 						<div class="nav-container">

@@ -15,6 +15,7 @@
 
 	#home-link {
 		display: inline-block;
+		margin-bottom: 1.4em;
 		svg {
 			max-width: 100%;
 		}
@@ -44,6 +45,15 @@
 @media screen and (min-width: 768px) {
 	.site-branding {
 		margin-bottom: 3em;
+		.divider {
+			&::after {
+				content: "";
+				display: inline-block;
+				background-color: $medium-gray;
+				height: 2px;
+				width: 40px;
+			}
+		}
 	}
 }
 
@@ -59,9 +69,6 @@
 	#masthead-inner {
 		transform: translateX(-1em);
 		opacity: 0;
-		//transition: transform 0.4s ease-out;
-		background: $color__background-header;
-		box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.13);
 		padding: 3em 2em 2em;
 		.widget_text {
 			margin-top: 3em;
@@ -80,6 +87,10 @@
 		opacity: 1;
 		transition: all 0.6s ease-out;
 	}
+	// .site-branding {
+	// 	background: $color__background-header;
+	// 	box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.13);
+	// }
 }
 
 .no-js #masthead #masthead-inner {
