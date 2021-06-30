@@ -4,7 +4,7 @@ var watch = require('gulp-watch');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
-var runSequence = require('run-sequence');
+var runSequence = require('gulp4-run-sequence');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
@@ -112,10 +112,6 @@ gulp.task('images', function() {
 	.pipe(gulp.dest('./dist/laura-heino/assets/images'));
 });
 
-// gulp.task('build', function(callback) {
-// 	runSequence('sass', 'scripts', ['rootfiles', 'inc', 'template-parts', 'page-templates', 'js', 'css', 'icons', 'images']), callback
-// });
-
-gulp.task('build', async function() {
-	gulp.series('sass', 'scripts', 'rootfiles', 'inc', 'template-parts', 'page-templates', 'js', 'css', 'icons', 'images')
+gulp.task('build', async function(callback) {
+	runSequence('sass', 'scripts', ['rootfiles', 'inc', 'template-parts', 'page-templates', 'js', 'css', 'icons', 'images']), callback
 });

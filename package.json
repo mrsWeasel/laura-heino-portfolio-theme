@@ -20,6 +20,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.9",
+    "gulp4-run-sequence": "^1.0.1",
     "run-sequence": "^1.2.2"
   }
 }
