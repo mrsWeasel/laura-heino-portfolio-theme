@@ -20,9 +20,9 @@
 			//@include font-size(1.6);
 			text-transform:lowercase;
 			text-decoration: none;
-			// &:hover, &:focus {
-
-			// }
+			&:hover, &:focus, &:active {
+				color: $color__link-hover;
+			}
 		}
 
 		.current_page_item > a,
@@ -30,6 +30,9 @@
 		.current_page_ancestor > a,
 		.current-menu-ancestor > a {
 			color: $color__link-current;
+			&:hover, &:focus, &:active {
+				color: $color__link-hover;
+			}
 		}
 
 		@media screen and (min-width: 768px) {
