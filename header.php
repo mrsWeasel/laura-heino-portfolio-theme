@@ -34,7 +34,11 @@
 								<!--<h1>Laura Heino<br>
 								<span class="subheading">Portfolio</span></h1>-->
 							</a>
-							<h1>Design portfolio of Laura Heino</h1>
+							<?php if (is_front_page()) {?>
+								<h1>Design portfolio of Laura Heino</h1>
+								<?php } else { ?>
+								<h2>Design portfolio of Laura Heino</h2>
+								<?php } ?>
 							<div class="divider"></div>
 						</div><!-- .site-branding -->
 
