@@ -19,13 +19,15 @@ a {
 
 :not(.site-branding)>a {	
 	img {
-		transition: opacity 0.5s ease-in-out;
-		opacity: 1;
+		transition: all 0.5s ease-in-out;
+		box-shadow: 0;
+		// opacity: 1;
 	}	
 	&:hover, &:focus {
 		img {
-			transition: opacity 0.3s ease-in-out;
-			opacity: 0.8;
+			transition: all 0.3s ease-in-out;
+			box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
+			// opacity: 0.8;
 		}
 	}
 }

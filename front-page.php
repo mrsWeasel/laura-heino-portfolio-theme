@@ -27,11 +27,11 @@ get_header(); ?>
 						?>
 
 						
-						<div class="col-sm-6">
-							<?php if (has_post_thumbnail()) {
+						<!-- <div class="col-sm-6"> -->
+							<!-- <?php if (has_post_thumbnail()) {
 								the_post_thumbnail('portfolio_1_1');
-							} ?>
-						</div>
+							} ?> -->
+						<!-- </div> -->
 				</main><!-- #main -->
 			</div><!-- #primary -->
 		</div>	
